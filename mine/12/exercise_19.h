@@ -26,7 +26,11 @@ class StrBlob
     size_type size() const { return data->size(); }
     bool empty() const { return data->empty(); }
 
-    void push_back(const string &t) { data->push_back(t); }
+    void push_back(const string &s) { data->push_back(s); }
+    void push_back(string &&s)
+    {
+        data->push_back(std::move(s));
+    }
     void pop_back()
     {
         check(0, "pop_back on empty StrBlob");
