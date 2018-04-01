@@ -2,9 +2,14 @@
 #define EXERCISE_44_H
 
 #include <memory>
+#include <iostream>
+
+using namespace std;
 
 class String
 {
+  friend ostream &operator<<(ostream &os, const String &);
+
 public:
   String() : String("") {}
   String(const char *);

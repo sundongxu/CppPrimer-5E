@@ -4,6 +4,14 @@
 
 using namespace std;
 
+ostream &operator<<(ostream &os, const String &s)
+{
+    auto c = s.c_str();
+    while (*c)
+        os << *c++;
+    return os;
+}
+
 pair<char *, char *> String::alloc_n_copy(const char *b, const char *e)
 {
     auto str = alloc.allocate(e - b);
